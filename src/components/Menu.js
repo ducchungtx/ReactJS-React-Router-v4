@@ -5,6 +5,7 @@ const menus = [
     { name: 'Trang chủ', to: '/', exact: true },
     { name: 'Giới thiệu', to: '/about', exact: false },
     { name: 'Liên hệ', to: '/contact', exact: false },
+    { name: 'Sản phẩm', to: '/products', exact: false },
 ];
 
 const MenuLink = ({ label, to, activeOnlyWhenExtract }) => {

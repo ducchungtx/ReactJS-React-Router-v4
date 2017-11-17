@@ -25,6 +25,8 @@ class Products extends Component {
                 </NavLink>
             )
         })
+        const { location } = this.props;
+        console.log(location);
         return (
             <div className="container">
                 <h1>Danh sách sản phẩm</h1>                

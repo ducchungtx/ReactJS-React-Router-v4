@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Home from './components/Home';
 import About from './components/About';
@@ -17,12 +17,7 @@ const MenuLink = ({ label, to, activeOnlyWhenExtract }) => {
                     const active = match ? 'active abc' : '';
                     return (
                         <li className={active}>
-                            <NavLink
-                                to={to}
-                                className="my-link"
-                            >
-                                {label}
-                            </NavLink>
+                            <Link to={to} className="my-link">{label}</Link>
                         </li>
                     )
                 }

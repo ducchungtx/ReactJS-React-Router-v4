@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import NotFound from './components/NotFound';
-
 import './App.css';
 import Menu from './components/Menu';
+import routes from './routes';
 
 class App extends Component {
     render() {
@@ -18,15 +14,22 @@ class App extends Component {
                     <Menu />
                     {/* Noi dung */}
                     <Switch>
-                        <Route path="/" exact component={Home} />
-                        <Route path="/about" component={About} />
-                        <Route path="/contact" component={Contact} />
-                        <Route component={NotFound} />
+                        {this.showContentMenus(routes)}
                     </Switch>
-                    
+
                 </div>
             </Router>
         );
+    }
+
+    showContentMenus(routes) {
+        let kq = null;
+        if (routes.length > 0) {
+            kq = routes.map((route, index) => (
+                <Route key={index} path={route.path} exact={route.exact} component={route.main} />
+            ))
+        }
+        return kq;
     }
 }
 

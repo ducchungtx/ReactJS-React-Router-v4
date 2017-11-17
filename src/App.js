@@ -18,11 +18,10 @@ const MenuLink = ({ label, to, activeOnlyWhenExtract }) => {
                     return (
                         <li className={active}>
                             <NavLink
-                                to="/"
+                                to={to}
                                 className="my-link"
-                                exact
                             >
-                                Trang chủ
+                                {label}
                             </NavLink>
                         </li>
                     )
@@ -40,29 +39,9 @@ class App extends Component {
                     {/* Menu */}
                     <nav className="navbar navbar-default">
                         <ul className="nav navbar-nav">
-                            <li className="active">
-                                <NavLink
-                                    to="/"
-                                    className="my-link"
-                                    exact
-                                >
-                                    Trang chủ
-                                </NavLink>
-                            </li>
-                            <li className="active">
-                                <NavLink
-                                    to="/about"
-                                    className="my-link"
-                                >
-                                    Giới thiệu
-                                </NavLink>
-                            </li>
-                            <li className="active">
-                                <NavLink
-                                    to="/contact"
-                                    className="my-link"
-                                >Liên hệ</NavLink>
-                            </li>
+                            <MenuLink label="Trang chủ" to="/" activeOnlyWhenExtract={true} />
+                            <MenuLink label="Giới thiệu" to="/about" />
+                            <MenuLink label="Liên hệ" to="/contact" />
                         </ul>
                     </nav>
                     {/* Noi dung */}

@@ -7,10 +7,6 @@ class Login extends Component {
         txtPassword: ''
     }
 
-    checkUser(username, password) {
-        
-    }
-
     onChange = (e) => {
         let target = e.target;
         let name = target.name;
